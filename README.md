@@ -2,7 +2,7 @@
 
 ## Version of Java Used: 22
 
-# Building and Running:
+## Building and Running:
 First download the TankGame repository from Github and open
 it with an IDE (IntelliJ, recommended), then add a configuration and choose
 application. Choose the SDK version as “Java 22 SDK of ‘TankGame_java’ module and main class as
@@ -11,7 +11,7 @@ as TankGame and ensure the correct path. Then click apply to save
 configuration. Set the resorce folder as the source root using "mark directory as > source root".
 Click the run button to build and run the game.
 
-# To run the JAR:
+## To run the JAR:
 Add the correct path to the JAR in your new application configuration. 
 (..\TankGame_jar\jar\TankGame.jar). Click apply and then Run.
 
