@@ -33,7 +33,7 @@ public class Tank {
     private boolean RightPressed;
     private boolean LeftPressed;
 
-    private final List<Bullet> bullets = new ArrayList<>();
+    final List<Bullet> bullets = new ArrayList<>();
     private final BufferedImage bulletImg;
     private final Animation deathAnimation;
 
@@ -45,7 +45,6 @@ public class Tank {
     public boolean isWinner = true;
     public int spawnX;
     public int spawnY;
-    public BufferedImage healthHitImg;
     public boolean isMonk = false;
 
     public Tank(float x, float y, float vx, float vy, float angle, BufferedImage normimg, BufferedImage imgRage, BufferedImage imgMonk, BufferedImage bulletImg, int SpawnX, int SpawnY) {
@@ -181,7 +180,6 @@ public class Tank {
     }
 
     public void recoil() {
-        // Save the current position before recoil
         float prevX = this.x;
         float prevY = this.y;
 
@@ -230,6 +228,8 @@ public class Tank {
         }
 
         // Update bullets
+        GameWorld.bulletUpdate(this);
+        /*
         Iterator<Bullet> bulletIterator = bullets.iterator();
         while (bulletIterator.hasNext()) {
             Bullet bullet = bulletIterator.next();
@@ -238,6 +238,7 @@ public class Tank {
                 bulletIterator.remove();
             }
         }
+         */
     }
 
     public Rectangle getBoundingBox() {
@@ -354,3 +355,4 @@ public class Tank {
     }
 
 }
+
