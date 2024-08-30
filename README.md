@@ -1,4 +1,6 @@
 # Clash Royale Mimic Tang Game in Java
+![tank2try](https://github.com/user-attachments/assets/02e56a4d-e270-4506-b647-02e43c733786)
+
 
 ## Version of Java Used: 22
 
