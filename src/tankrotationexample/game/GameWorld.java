@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import javax.imageio.ImageIO;
@@ -177,7 +179,17 @@ public class GameWorld extends JPanel implements Runnable {
             }
         }
     }
+    public static void bulletUpdate(Tank t) {
+        Iterator<Bullet> bulletIterator = t.bullets.iterator();
+        while (bulletIterator.hasNext()) {
+            Bullet bullet = bulletIterator.next();
+            bullet.update();
+            if (bullet.isOutOfBounds(GameConstants.GAME_WORLD_WIDTH, GameConstants.GAME_WORLD_HEIGHT)) {
+                bulletIterator.remove();
 
+            }
+        }
+    }
     @Override
     public void run() {
         try {
@@ -270,15 +282,15 @@ public class GameWorld extends JPanel implements Runnable {
         if (t1.isWinner) {
             try {
                 winImg = ImageIO.read(Objects.requireNonNull(GameWorld.class.getClassLoader().getResource("P1Win.png"),
-                            "Could not find P1Win.png")
-                    );
+                        "Could not find P1Win.png")
+                );
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         } else {
             try {
                 winImg = ImageIO.read(Objects.requireNonNull(GameWorld.class.getClassLoader().getResource("P2Win.png"),
-                            "Could not find P2Win.png")
+                        "Could not find P2Win.png")
                 );
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -296,8 +308,8 @@ public class GameWorld extends JPanel implements Runnable {
         // Draw the background and objects on the buffer
         Graphics2D buffer = world.createGraphics();
         buffer.drawImage(background, 0, 0, GameConstants.GAME_WORLD_WIDTH, GameConstants.GAME_WORLD_HEIGHT, null);
-
-        for (Obstacle obstacle : obstacles) {
+        List<Obstacle> obstaclesCopy = new ArrayList<>(obstacles);
+        for (Obstacle obstacle : obstaclesCopy) {
             obstacle.drawImage(buffer);
         }
         for (PowerUp powerUp : powerUps) {
