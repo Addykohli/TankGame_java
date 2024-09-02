@@ -29,16 +29,21 @@ Add the correct path to the JAR in your new application configuration.
 
 ## Rules:
 Once on the Start panel, click the start button and the gme
-will start. Player uses ASDW to move and Spacebar to shoot, Player
+will start. 
+
+Player 1 uses ASDW to move and Spacebar to shoot, Player
 2 uses arrow keys to move and enter to shoot. Players start with 3
-lives and health 100, they have 10 damage on each bullet hit. There
-are breakable walls that break in 2 hits and unbreakable ones.
-Players can shoot through water but not move through it. Heal
-(yellow) power up heals 50 health, not exceeding 100 health, and
+lives and health 100, they have 10 damage on each bullet hit. 
+There are breakable walls that break in 2 hits and unbreakable ones.
+Players can shoot through water but not move through it. 
+
+Heal (yellow) power up heals 50 health, not exceeding 100 health, and
 cannot be picked up when player health is full, Rage (purple)
 doubles players damage until player is respawned, cannot be picked
 up if player is already raged. Lightning (blue) powerup strikes the
 opponent with 3 bolts of 15 damage each. Haste (pink) increases
 plater speed and can be stacked up. Live (pink drop) powerup gives
-additional life. Monk (card shaped) renders the players with bullet
-reflection ability for 15 seconds while player can still shoot.
+additional life. Monk (card shaped) renders the player with bullet
+reflection ability for 15 seconds while the player can still shoot.
+
+Finish all your apponents lives and health to win.
