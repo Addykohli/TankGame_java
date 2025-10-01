@@ -21,8 +21,8 @@ public class Tank {
     private float vy;
     public float angle;
 
-    public static float R = 2.4f;
-    private final float ROTATIONSPEED = 1.7f;
+    public static float speed = 1.4f;
+    private final float ROTATIONSPEED = 1.0f;
 
     public BufferedImage img;
     public BufferedImage normImg;
@@ -184,8 +184,8 @@ public class Tank {
         float prevY = this.y;
 
         double radians = Math.toRadians(angle);
-        double dx = Math.cos(radians) * -10; // Move back by 10 units in the opposite direction
-        double dy = Math.sin(radians) * -10; // Move back by 10 units in the opposite direction
+        double dx = Math.cos(radians) * -10; 
+        double dy = Math.sin(radians) * -10; 
 
         // Update tank position
         this.x += (float) dx;
@@ -290,16 +290,16 @@ public class Tank {
     }
 
     private void moveBackwards() {
-        vx = (float) (R * Math.cos(Math.toRadians(angle)));
-        vy = (float) (R * Math.sin(Math.toRadians(angle)));
+        vx = (float) (speed * Math.cos(Math.toRadians(angle)));
+        vy = (float) (speed * Math.sin(Math.toRadians(angle)));
         x -= vx;
         y -= vy;
         checkBorder();
     }
 
     private void moveForwards() {
-        vx = (float) (R * Math.cos(Math.toRadians(angle)));
-        vy = (float) (R * Math.sin(Math.toRadians(angle)));
+        vx = (float) (speed * Math.cos(Math.toRadians(angle)));
+        vy = (float) (speed * Math.sin(Math.toRadians(angle)));
         x += vx;
         y += vy;
         checkBorder();
@@ -346,12 +346,12 @@ public class Tank {
         }
     }
 
-    public void setSpeed(float speed) {
-        R = speed;
+    public void setSpeed(float Speed) {
+        speed = Speed;
     }
 
     public float getSpeed() {
-        return R;
+        return speed;
     }
 
 }

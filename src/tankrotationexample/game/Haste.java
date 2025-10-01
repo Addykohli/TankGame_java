@@ -15,11 +15,11 @@ public class Haste extends PowerUp {
 
     @Override
     public void applyEffect(Tank tank) {
-        tank.setSpeed(tank.getSpeed()+0.5f);
+        tank.setSpeed(tank.getSpeed()+0.2f);
         this.hasteSound.play();
     }
     public static void resetEffect(Tank tank) {
-        tank.setSpeed(2.4f);
+        tank.setSpeed(1.4f);
     }
 
     private static BufferedImage loadImage() {

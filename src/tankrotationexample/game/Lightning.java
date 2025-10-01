@@ -16,7 +16,7 @@ public class Lightning extends PowerUp {
     private static final int DAMAGE_INTERVAL = 1500;
     private int hitsLeft = HIT_COUNT;
     private final Sound thunder = new Sound("thunder.wav");
-    private final Sound getLightning = new Sound("LightningGet.wav");
+    private final Sound getLightning = new Sound("lightningGet.wav");
     private static Animation lightningAnimation;
     public Lightning(int x, int y) { //strikes opponent with 3 lightning bolts
         super(x, y, loadImage());
